@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
 final class SpecCleaner
 {
@@ -82,7 +82,7 @@ final class SpecCleaner
     }
 
     /**
-     * @param array<int|string, mixed> $arr
+     * @param  array<int|string, mixed> $arr
      * @return bool
      */
     private function isAssoc(array $arr): bool

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
+
+use function array_key_exists;
 
 use On1kel\OAS\Builder\Parameters\Parameter as ParameterBuilder;
 use On1kel\OAS\Builder\Paths\Operation as OperationBuilder;
 use On1kel\OAS\Builder\Paths\PathItem as PathItemBuilder;
 use On1kel\OAS\Builder\Paths\Paths as PathsBuilder;
 use On1kel\OAS\Builder\Schema\Schema;
-use function array_key_exists;
 
 final class PathsAccumulator
 {

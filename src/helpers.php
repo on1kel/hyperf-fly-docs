@@ -6,7 +6,7 @@ if (!function_exists('array_is_list_safe')) {
     /**
      * Проверка, что массив является списком с нулевой индексацией.
      *
-     * @param array<mixed> $array
+     * @param  array<mixed> $array
      * @return bool
      */
     function array_is_list_safe(array $array): bool
@@ -31,7 +31,7 @@ if (!function_exists('base_path')) {
     /**
      * Возвращает абсолютный путь к базовой директории приложения.
      *
-     * @param string $path
+     * @param  string $path
      * @return string
      */
     function base_path(string $path = ''): string
@@ -48,4 +48,3 @@ if (!function_exists('base_path')) {
         return $path === '' ? $base : $base . '/' . ltrim($path, '/');
     }
 }
-

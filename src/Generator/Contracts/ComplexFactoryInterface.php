@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Contracts;
+namespace On1kel\HyperfFlyDocs\Generator\Contracts;
 
-use Khazhinov\HyperfFlyDocs\Generator\DTO\ComplexResultDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\ComplexResultDTO;
 
 interface ComplexFactoryInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Attributes;
+namespace On1kel\HyperfFlyDocs\Generator\Attributes;
 
 use Attribute;
 

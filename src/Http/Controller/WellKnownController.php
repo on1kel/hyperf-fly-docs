@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Http\Controller;
+namespace On1kel\HyperfFlyDocs\Http\Controller;
 
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\GetMapping;

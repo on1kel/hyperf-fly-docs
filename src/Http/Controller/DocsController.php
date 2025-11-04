@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Http\Controller;
+namespace On1kel\HyperfFlyDocs\Http\Controller;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponse;
-use Khazhinov\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
+use On1kel\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
 use Psr\Http\Message\ResponseInterface;
 
 #[Controller(prefix: 'fly-docs')]
@@ -72,6 +72,7 @@ final class DocsController
             }
 
             $html = str_replace('__SPEC_URL__', '/fly-docs/' . rawurlencode($tag) . '/api-docs', $html);
+
             return $this->response->html($html);
         }
 

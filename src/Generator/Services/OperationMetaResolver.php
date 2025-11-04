@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
-use Khazhinov\HyperfFlyDocs\Generator\Attributes\Operation;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\OperationMetaDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\RouteDTO;
+use On1kel\HyperfFlyDocs\Generator\Attributes\Operation;
+use On1kel\HyperfFlyDocs\Generator\DTO\OperationMetaDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\RouteDTO;
 use On1kel\OAS\Builder\Security\SecurityRequirement as SecReq;
 use ReflectionException;
 use ReflectionMethod;
@@ -15,10 +15,10 @@ use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 final class OperationMetaResolver
 {
     /**
-     * @param RouteDTO $ctx
-     * @return OperationMetaDTO|null
+     * @param  RouteDTO              $ctx
      * @throws ReflectionException
      * @throws UnknownProperties
+     * @return OperationMetaDTO|null
      */
     public function resolve(RouteDTO $ctx): ?OperationMetaDTO
     {
@@ -70,7 +70,7 @@ final class OperationMetaResolver
     /**
      * Парсинг PHPDoc для summary/description.
      *
-     * @return array{0: string|null, 1: string|null}  // ← уточняем value types
+     * @return array{0: string|null, 1: string|null} // ← уточняем value types
      */
     private function extractPhpDoc(ReflectionMethod $rm): array
     {
@@ -113,8 +113,8 @@ final class OperationMetaResolver
     /**
      * Нормализует security в список SecurityRequirement билдов.
      *
-     * @param mixed $security
-     * @return list<SecReq>  // [94] уточняем value type
+     * @param  mixed        $security
+     * @return list<SecReq> // [94] уточняем value type
      */
     private function normalizeSecurity(mixed $security): array
     {
@@ -150,7 +150,7 @@ final class OperationMetaResolver
     /**
      * Преобразует карту {scheme: scopes} к виду array<string, list<non-empty-string>>.
      *
-     * @param array<array-key, mixed> $map
+     * @param  array<array-key, mixed>               $map
      * @return array<string, list<non-empty-string>>
      */
     private function normalizeRequirementMap(array $map): array

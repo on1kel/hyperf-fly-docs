@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Registry;
+namespace On1kel\HyperfFlyDocs\Generator\Registry;
 
 use On1kel\OAS\Builder\Bodies\RequestBody;
 use On1kel\OAS\Builder\Components\Components;

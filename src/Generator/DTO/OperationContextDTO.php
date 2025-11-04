@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\DTO;
+namespace On1kel\HyperfFlyDocs\Generator\DTO;
 
 use Khazhinov\PhpSupport\DTO\Custer\DataTransferObjectCaster;
 use Khazhinov\PhpSupport\DTO\DataTransferObject;

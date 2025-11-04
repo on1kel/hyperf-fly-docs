@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
-use Khazhinov\HyperfFlyDocs\Generator\DTO\CollectionAssembleResultDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\CollectionAssembleResultDTO;
 use On1kel\OAS\Builder\Info;
 use On1kel\OAS\Builder\Info\Contact as ContactBuilder;
 use On1kel\OAS\Builder\Info\License as LicenseBuilder;

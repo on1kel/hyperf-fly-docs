@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Assembler;
+namespace On1kel\HyperfFlyDocs\Generator\Assembler;
 
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\CollectionAssembleResultDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\ConfigDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\OperationContextDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\RouteDTO;
-use Khazhinov\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
-use Khazhinov\HyperfFlyDocs\Generator\Services\ComplexRunner;
-use Khazhinov\HyperfFlyDocs\Generator\Services\OperationComposer;
-use Khazhinov\HyperfFlyDocs\Generator\Services\OperationMetaResolver;
-use Khazhinov\HyperfFlyDocs\Generator\Services\PathsAccumulator;
-use Khazhinov\HyperfFlyDocs\Generator\Services\RouteFilter;
-use Khazhinov\HyperfFlyDocs\Generator\Services\SecurityDefinitionsApplier;
+use On1kel\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
+use On1kel\HyperfFlyDocs\Generator\DTO\CollectionAssembleResultDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\ConfigDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\OperationContextDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\RouteDTO;
+use On1kel\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
+use On1kel\HyperfFlyDocs\Generator\Services\ComplexRunner;
+use On1kel\HyperfFlyDocs\Generator\Services\OperationComposer;
+use On1kel\HyperfFlyDocs\Generator\Services\OperationMetaResolver;
+use On1kel\HyperfFlyDocs\Generator\Services\PathsAccumulator;
+use On1kel\HyperfFlyDocs\Generator\Services\RouteFilter;
+use On1kel\HyperfFlyDocs\Generator\Services\SecurityDefinitionsApplier;
 use ReflectionException;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 

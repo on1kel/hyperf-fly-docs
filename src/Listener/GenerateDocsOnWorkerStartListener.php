@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Listener;
+namespace On1kel\HyperfFlyDocs\Listener;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\AfterWorkerStart;
-use Khazhinov\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
+use On1kel\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
 
 #[Listener]
 final class GenerateDocsOnWorkerStartListener implements ListenerInterface

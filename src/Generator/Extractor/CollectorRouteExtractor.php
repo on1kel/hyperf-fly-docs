@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Extractor;
+namespace On1kel\HyperfFlyDocs\Generator\Extractor;
 
 use Hyperf\Di\Annotation\AnnotationCollector;
 use Hyperf\HttpServer\Annotation\Controller;
@@ -11,7 +11,7 @@ use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\HttpServer\Annotation\PatchMapping;
 use Hyperf\HttpServer\Annotation\PostMapping;
 use Hyperf\HttpServer\Annotation\PutMapping;
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
+use On1kel\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
 use ReflectionClass;
 use ReflectionMethod;
 use Throwable;

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
 use Hyperf\Context\ApplicationContext;
-use Khazhinov\HyperfFlyDocs\Generator\Attributes\Complex;
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\ComplexFactoryInterface;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\ComplexResultDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\RouteDTO;
+use On1kel\HyperfFlyDocs\Generator\Attributes\Complex;
+use On1kel\HyperfFlyDocs\Generator\Contracts\ComplexFactoryInterface;
+use On1kel\HyperfFlyDocs\Generator\DTO\ComplexResultDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\RouteDTO;
 use ReflectionClass;
 use ReflectionMethod;
 use RuntimeException;

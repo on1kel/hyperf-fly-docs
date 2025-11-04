@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Khazhinov\\HyperfFlyDocs\\": "src/"
+      "On1kel\\HyperfFlyDocs\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -39,12 +39,12 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Khazhinov\\HyperfFlyDocs\\": "tests/"
+      "On1kel\\HyperfFlyDocs\\": "tests/"
     }
   },
   "extra": {
     "hyperf": {
-      "config": "Khazhinov\\HyperfFlyDocs\\ConfigProvider"
+      "config": "On1kel\\HyperfFlyDocs\\ConfigProvider"
     }
   },
   "scripts": {

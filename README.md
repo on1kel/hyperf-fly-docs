@@ -1,6 +1,6 @@
-# Khazhinov Hyperf FlyDocs
+# Hyperf FlyDocs
 
-**Khazhinov Hyperf FlyDocs** — расширение для [Hyperf](https://hyperf.io), которое автоматически формирует и публикует OpenAPI (Swagger) документацию на основе кода и фабрик (`ComplexFactoryInterface`).
+**Hyperf FlyDocs** — расширение для [Hyperf](https://hyperf.io), которое автоматически формирует и публикует OpenAPI (Swagger) документацию на основе кода и фабрик (`ComplexFactoryInterface`).
 
 Вместо ручного описания аннотаций вы просто указываете `#[Complex(...)]`, а FlyDocs собирает полную спецификацию с параметрами, схемами и ответами.
 
@@ -20,7 +20,7 @@
 ## 📦 Установка
 
 ```bash
-composer require khazhinov/hyperf-flydocs
+composer require on1kel/hyperf-flydocs
 ```
 
 Пакет автоматически зарегистрируется через `ConfigProvider`.
@@ -30,7 +30,7 @@ composer require khazhinov/hyperf-flydocs
 ## ⚙️ Публикация ресурсов
 
 ```bash
-php bin/hyperf.php vendor:publish khazhinov/hyperf-flydocs
+php bin/hyperf.php vendor:publish on1kel/hyperf-flydocs
 ```
 
 Будут созданы:
@@ -97,11 +97,11 @@ namespace App\Http\Controllers\Api;
 
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\PostMapping;
-use Khazhinov\HyperfFlyDocs\Attributes\Operation;
-use Khazhinov\HyperfFlyDocs\Attributes\Complex;
+use On1kel\HyperfFlyDocs\Attributes\Operation;
+use On1kel\HyperfFlyDocs\Attributes\Complex;
 use App\Models\Comment;
 use App\Http\Resources\CommentCollection;
-use Khazhinov\HyperfLighty\OpenApi\Complexes\IndexActionComplex;
+use On1kel\HyperfLighty\OpenApi\Complexes\IndexActionComplex;
 
 #[Controller(prefix: 'api/comments')]
 final class CommentController
@@ -189,10 +189,10 @@ Swagger UI поставляется вместе с пакетом (`publish/ui/
 
 ## 💡 Полезно знать
 
-- Весь код генерации располагается в пространстве имён `Khazhinov\HyperfFlyDocs\Generator`.  
+- Весь код генерации располагается в пространстве имён `On1kel\HyperfFlyDocs\Generator`.  
 - Все классы, реализующие `ComplexFactoryInterface`, могут быть использованы как фабрики для `#[Complex(...)]`.  
 - Swagger UI можно переопределить или подключить собственный шаблон, разместив файл `publish/fly-docs/index.html`.
 
 ---
 
-**Khazhinov Hyperf FlyDocs** — декларативный способ документировать Hyperf-приложения без ручного редактирования OpenAPI.
+**Hyperf FlyDocs** — декларативный способ документировать Hyperf-приложения без ручного редактирования OpenAPI.

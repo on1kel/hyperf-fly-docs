@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
 use function in_array;
 
-use Khazhinov\HyperfFlyDocs\Generator\DTO\ConfigDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\RouteDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\ConfigDTO;
+use On1kel\HyperfFlyDocs\Generator\DTO\RouteDTO;
 
 final class RouteFilter
 {

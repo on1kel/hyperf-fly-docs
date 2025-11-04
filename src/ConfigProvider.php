@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs;
+namespace On1kel\HyperfFlyDocs;
 
-use Khazhinov\HyperfFlyDocs\Generator\Assembler\CollectionAssembler;
-use Khazhinov\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
-use Khazhinov\HyperfFlyDocs\Generator\Extractor\CollectorRouteExtractor;
-use Khazhinov\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
-use Khazhinov\HyperfFlyDocs\Generator\Services\ComplexRunner;
-use Khazhinov\HyperfFlyDocs\Generator\Services\DocumentFactory;
-use Khazhinov\HyperfFlyDocs\Generator\Services\OperationComposer;
-use Khazhinov\HyperfFlyDocs\Generator\Services\OperationMetaResolver;
-use Khazhinov\HyperfFlyDocs\Generator\Services\PathsAccumulator;
-use Khazhinov\HyperfFlyDocs\Generator\Services\RouteFilter;
-use Khazhinov\HyperfFlyDocs\Listener\GenerateDocsOnWorkerStartListener;
+use On1kel\HyperfFlyDocs\Generator\Assembler\CollectionAssembler;
+use On1kel\HyperfFlyDocs\Generator\Cache\DocsCacheManager;
+use On1kel\HyperfFlyDocs\Generator\Contracts\RouteExtractorInterface;
+use On1kel\HyperfFlyDocs\Generator\Extractor\CollectorRouteExtractor;
+use On1kel\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
+use On1kel\HyperfFlyDocs\Generator\Services\ComplexRunner;
+use On1kel\HyperfFlyDocs\Generator\Services\DocumentFactory;
+use On1kel\HyperfFlyDocs\Generator\Services\OperationComposer;
+use On1kel\HyperfFlyDocs\Generator\Services\OperationMetaResolver;
+use On1kel\HyperfFlyDocs\Generator\Services\PathsAccumulator;
+use On1kel\HyperfFlyDocs\Generator\Services\RouteFilter;
+use On1kel\HyperfFlyDocs\Listener\GenerateDocsOnWorkerStartListener;
 
 final class ConfigProvider
 {

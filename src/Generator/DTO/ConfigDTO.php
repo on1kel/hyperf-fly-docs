@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\DTO;
+namespace On1kel\HyperfFlyDocs\Generator\DTO;
 
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\SecuritySchemesContainerContract;
 use Khazhinov\PhpSupport\DTO\DataTransferObject;
+use On1kel\HyperfFlyDocs\Generator\Contracts\SecuritySchemesContainerContract;
 
 final class ConfigDTO extends DataTransferObject
 {

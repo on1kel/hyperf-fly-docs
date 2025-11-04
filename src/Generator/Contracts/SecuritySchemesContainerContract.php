@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Contracts;
+namespace On1kel\HyperfFlyDocs\Generator\Contracts;
 
 use On1kel\OAS\Builder\Security\SecurityRequirement;
 use On1kel\OAS\Builder\Security\SecurityScheme;

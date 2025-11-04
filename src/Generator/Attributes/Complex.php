@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Attributes;
+namespace On1kel\HyperfFlyDocs\Generator\Attributes;
 
 use InvalidArgumentException;
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\ComplexFactoryInterface;
+use On1kel\HyperfFlyDocs\Generator\Contracts\ComplexFactoryInterface;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
 final class Complex

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Cache;
+namespace On1kel\HyperfFlyDocs\Generator\Cache;
 
 use function bin2hex;
 use function file_get_contents;
@@ -13,13 +13,11 @@ use Hyperf\Contract\ConfigInterface;
 use function is_dir;
 use function is_file;
 use function json_decode;
-
-use Khazhinov\HyperfFlyDocs\Generator\Assembler\CollectionAssembler;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\ConfigDTO;
-use Khazhinov\HyperfFlyDocs\Generator\Services\DocumentFactory;
-
 use function mkdir;
 
+use On1kel\HyperfFlyDocs\Generator\Assembler\CollectionAssembler;
+use On1kel\HyperfFlyDocs\Generator\DTO\ConfigDTO;
+use On1kel\HyperfFlyDocs\Generator\Services\DocumentFactory;
 use On1kel\OAS\Builder\Support\ProfileProvider;
 use On1kel\OAS\Core\Model\OpenApiDocument;
 use On1kel\OAS\Core\Serialize\DefaultDenormalizer;

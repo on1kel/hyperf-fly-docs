@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
 use Hyperf\Contract\ConfigInterface;
-use Khazhinov\HyperfFlyDocs\Generator\Contracts\SecuritySchemesContainerContract;
-use Khazhinov\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
+use On1kel\HyperfFlyDocs\Generator\Contracts\SecuritySchemesContainerContract;
+use On1kel\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
 use On1kel\OAS\Builder\Security\SecurityRequirement;
 
 final class SecurityDefinitionsApplier

@@ -2,16 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Khazhinov\HyperfFlyDocs\Generator\Services;
+namespace On1kel\HyperfFlyDocs\Generator\Services;
 
-use Khazhinov\HyperfFlyDocs\Generator\DTO\OperationContextDTO;
-use Khazhinov\HyperfFlyDocs\Generator\DTO\OperationMetaDTO;
-use Khazhinov\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
+use On1kel\HyperfFlyDocs\Generator\DTO\OperationContextDTO;
+use On1kel\HyperfFlyDocs\Generator\Registry\ComponentsRegistry;
 use On1kel\OAS\Builder\Bodies\RequestBody;
 use On1kel\OAS\Builder\Parameters\Parameter;
 use On1kel\OAS\Builder\Paths\Operation as OperationBuilder;
 use On1kel\OAS\Builder\Responses\Responses;
-use On1kel\OAS\Builder\Security\SecurityRequirement;
 
 final class OperationComposer
 {
