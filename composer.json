@@ -17,11 +17,8 @@
     "hyperf/command": "^3.1",
     "hyperf/config": "^3.1",
     "hyperf/http-message": "^3.1",
-    "psr/container": "^2.0",
-    "psr/log": "^3.0",
     "hyperf/support": "^3.1",
     "khazhinov/php-support": "^1.1",
-    "hyperf/collection": "^3.1",
     "on1kel/oas-profile-31": "^1.0",
     "on1kel/oas-builder": "^1.0"
   },
