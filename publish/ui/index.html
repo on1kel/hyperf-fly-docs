@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>API Docs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="/fly-docs-assets/swagger-ui.css"/>
+    <link rel="stylesheet" href="/fly-docs-assets/index.css"/>
+
+    <link rel="icon" type="image/png" href="/fly-docs-assets/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/fly-docs-assets/favicon-16x16.png" sizes="16x16"/>
+</head>
+<body>
+<div id="swagger-ui"></div>
+
+<script src="/fly-docs-assets/swagger-ui-bundle.js"></script>
+<script src="/fly-docs-assets/swagger-ui-standalone-preset.js"></script>
+
+<script>
+    (function () {
+        var parts = window.location.pathname.split('/').filter(Boolean);
+        var i = parts.indexOf('fly-docs');
+        var tag = (i >= 0 && parts[i + 1]) ? decodeURIComponent(parts[i + 1]) : 'latest';
+        var specUrl = '/fly-docs/' + encodeURIComponent(tag) + '/api-docs';
+
+        window.ui = SwaggerUIBundle({
+            url: specUrl,
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            docExpansion: 'list',
+            defaultModelsExpandDepth: 0,
+            defaultModelExpandDepth: 1,
+            displayRequestDuration: true,
+            syntaxHighlight:true,
+            filter: true,
+            tryItOutEnabled: false,
+            persistAuthorization: true,
+            validatorUrl: null,
+            layout: 'BaseLayout',
+            presets: [ SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset ],
+            plugins: [ SwaggerUIBundle.plugins.DownloadUrl ]
+        });
+    })();
+</script>
+</body>
+</html>
