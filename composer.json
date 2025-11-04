@@ -1,7 +1,6 @@
 {
   "name": "on1kel/hyperf-fly-docs",
   "description": "Полуавтоматическая генерация OpenAPI 3.1 документации для Hyperf-приложений.",
-  "version": "1.0.x-dev",
   "type": "library",
   "license": "MIT",
   "keywords": [
