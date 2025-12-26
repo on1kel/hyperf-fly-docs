@@ -34,33 +34,13 @@ final class PathsAccumulator
 
         $item = $this->items[$normalizedPath];
 
-        // 1) Привязываем операцию по HTTP-методу
-        switch (strtolower($method)) {
-            case 'get':     $item = $item->get($operation);
-                break;
-            case 'post':    $item = $item->post($operation);
-                break;
-            case 'put':     $item = $item->put($operation);
-                break;
-            case 'patch':   $item = $item->patch($operation);
-                break;
-            case 'delete':  $item = $item->delete($operation);
-                break;
-            case 'options': $item = $item->options($operation);
-                break;
-            case 'head':    $item = $item->head($operation);
-                break;
-            default: /* игнор */ break;
-        }
-
-        // 2) Сначала добавим явно переданные pathParams
-        $declared = [];
+        // 1) Добавляем path-параметры к операции (не к PathItem!)
+        // Сначала явно переданные pathParams
         foreach ($pathParams as $param) {
             $name = $param['name'];
             if ($name === '') {
                 continue;
             }
-            $declared[strtolower($name)] = true;
 
             $pb = ParameterBuilder::path($name)
                 ->required((bool)($param['required'] ?? true));
@@ -77,24 +57,49 @@ final class PathsAccumulator
                 $pb = $pb->schema($schema);
             }
 
-            $item = $item->parameters($pb);
+            $operation = $operation->parameter($pb);
         }
 
-        // 3) Автодобавим недостающие {vars} из шаблона пути
+        // Затем автодобавим недостающие {vars} из шаблона пути
+        $declaredKeys = array_map(
+            static fn(array $p): string => strtolower($p['name']),
+            array_filter($pathParams, static fn(array $p): bool => $p['name'] !== '')
+        );
+
         foreach ($this->extractPathVars($normalizedPath) as $var) {
             $key = strtolower($var);
-            if (isset($declared[$key])) {
-                continue; // уже добавлен вручную выше
+            if (in_array($key, $declaredKeys, true)) {
+                continue; // уже добавлен вручную
             }
 
-            $schema = $this->guessSchemaForVar($normalizedPath, $var);
+            [$schema, $example] = $this->guessSchemaAndExampleForVar($normalizedPath, $var);
 
             $pb = ParameterBuilder::path($var)
                 ->required(true)
                 ->description('Параметр пути')
+                ->example($example)
                 ->schema($schema);
 
-            $item = $item->parameters($pb);
+            $operation = $operation->parameter($pb);
+        }
+
+        // 2) Привязываем операцию по HTTP-методу
+        switch (strtolower($method)) {
+            case 'get':     $item = $item->get($operation);
+                break;
+            case 'post':    $item = $item->post($operation);
+                break;
+            case 'put':     $item = $item->put($operation);
+                break;
+            case 'patch':   $item = $item->patch($operation);
+                break;
+            case 'delete':  $item = $item->delete($operation);
+                break;
+            case 'options': $item = $item->options($operation);
+                break;
+            case 'head':    $item = $item->head($operation);
+                break;
+            default: /* игнор */ break;
         }
 
         $this->items[$normalizedPath] = $item;
@@ -136,9 +141,10 @@ final class PathsAccumulator
     }
 
     /**
-     * Эвристика выбора схемы по regex-ограничению/имени параметра
+     * Эвристика выбора схемы и примера по regex-ограничению/имени параметра
+     * @return array{0: Schema, 1: mixed}
      */
-    private function guessSchemaForVar(string $path, string $var): Schema
+    private function guessSchemaAndExampleForVar(string $path, string $var): array
     {
         // Попробуем вытащить regex из {var:...}
         $regex = null;
@@ -151,31 +157,31 @@ final class PathsAccumulator
 
         // 1) Если в имени явный uuid
         if (str_contains($lower, 'uuid')) {
-            return Schema::string()->asUUID();
+            return [Schema::string()->asUUID(), '550e8400-e29b-41d4-a716-446655440000'];
         }
 
         // 2) Если имя оканчивается на id — чаще всего integer
         if (preg_match('/(^id$|_id$)/i', $var)) {
-            return Schema::integer();
+            return [Schema::string()->asUUID(), '550e8400-e29b-41d4-a716-446655440000'];
         }
 
         // 3) Эвристики по regex
         if (is_string($regex) && $regex !== '') {
             // числа: \d+, ^\d+$, [0-9]+
             if (preg_match('/(?:\\\\d|\[0-9\])\+|\^\d+\$?/', $regex)) {
-                return Schema::integer();
+                return [Schema::integer(), 1];
             }
             // uuid в regex
             if (preg_match('/uuid|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $regex)) {
-                return Schema::string()->asUUID();
+                return [Schema::string()->asUUID(), '550e8400-e29b-41d4-a716-446655440000'];
             }
             // «slug»-подобные ограничения (запрет . и /)
             if (preg_match('/\[\^\/\.]/', $regex)) {
-                return Schema::string()->description('Slug');
+                return [Schema::string()->description('Slug'), 'example-slug'];
             }
         }
 
         // 4) Фолбэк — строка
-        return Schema::string();
+        return [Schema::string(), 'example'];
     }
 }
