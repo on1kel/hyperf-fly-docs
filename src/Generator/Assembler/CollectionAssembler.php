@@ -86,10 +86,13 @@ final class CollectionAssembler
         $paths_builder = $this->paths_accumulator->toBuilder();
         $components_builder = $this->components_registry->toBuilder();
 
+        $tags = array_keys($used_tags);
+        sort($tags);
+
         return new CollectionAssembleResultDTO([
             'paths'      => $paths_builder,
             'components' => $components_builder,
-            'used_tags'  => array_keys($used_tags),
+            'used_tags'  => $tags,
             'info'       => $collection_cfg->info,
             'servers'    => $collection_cfg->servers,
             'security'   => $securityRequirements,

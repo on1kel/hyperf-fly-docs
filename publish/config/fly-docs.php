@@ -30,7 +30,7 @@ return [
             // Сервера для этой коллекции
             'servers' => [
                 [
-                    'url' => 'http://localhost:9501',
+                    'url' => env('FLY_DOCS_SERVER', 'http://localhost:9501'),
                     'description' => 'Local environment',
                 ],
             ],
